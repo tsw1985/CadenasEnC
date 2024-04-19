@@ -5,7 +5,7 @@
 
 int main(int argc, char const *argv[])
 {
-
+/*
     char nombre[10];
     char apellido[20];
     char segundo_apellido[20];
@@ -41,13 +41,44 @@ int main(int argc, char const *argv[])
     scanf("%c",&letra);
 
     printf("LA LETRA ESCRITA FUE %c y la voy a ir a buscar\n",letra);
+    //strchr() devuelve un puntero con la letra encontrada
     char *letraEncontrada = strchr(copia_nombre,letra);
     if (letraEncontrada == NULL){
-        printf("No se encuentra la letra");
+        printf("No se encuentra la letra\n");
     }else{
-        printf("La letra encontrada fue %c \n",*letraEncontrada);   
-    }
+        printf("La letra encontrada fue %c y está en la posicion %d \n",*letraEncontrada);   
+    }*/
     
+    //strcmp()
+    //Compara cadenas alfabeticamente.
+    char cadena1[] = "a";
+    char cadena2[] = "A";
+    int result = strcmp(cadena1,cadena2);
+    printf("El resultado de la comparacion es %d\n",result);
+
+    //strcspn() Buscar caracter en cadena. indexOf()
+    char cadena3[] = "Hi,how are you? Im fine";
+    char letra[] = "o";
+    
+    int position = strcspn(cadena3,letra);
+    printf("La letra %s está en la posicion %d\n",letra,position);
+
+    //strlen() : Devuelve la longitud en bytes de la cadena sin el final nullo
+    printf("La cadena3 tiene una longitud %d\n",(int)strlen(cadena3));
+
+    //Buscamos letra ahora con scanf
+    printf("Escribe una letra para buscar\n");
+    scanf("%s",letra);
+    printf("Vas a buscar la letra %s\n",letra);
+
+    position = strcspn(cadena3,letra);
+    printf("La letra %s escrita con el teclado está en la posicion %d\n",letra,position);
+
+
+
+    //strncat() : 
+
+
 
     
 
